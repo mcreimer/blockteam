@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.7;
 
 import "@openzeppelin/contracts@4.8.0/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts@4.8.0/security/Pausable.sol";
@@ -13,6 +13,21 @@ contract ImovelUniao is ERC721, Pausable, AccessControl, ERC721Burnable {
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     Counters.Counter private _tokenIdCounter;
+    bytes16 public  classe;
+    bytes16 public rip;
+    bytes16 private id_utilizacao;
+    uint256 private dt_cadastro;
+    bytes4  private uf;
+    bytes32 private municipio;
+    bytes32 private endereco; 
+    bytes32 private bairro;
+    bytes32 private conceituacao;
+    bytes16 private tipo_imovel;
+    bytes32 private regime_utilizacao;
+    bytes32 private proprietario;
+    uint256 private dt_inicio_utlizacao;
+    uint16  private area_total;
+    uint16  private area_uniao;
 
     constructor() ERC721("ImovelUniao", "IMU") {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
